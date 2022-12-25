@@ -51,7 +51,7 @@ Within a component, import and provide a hook a Query Key and the reference:
 import React from "react";
 import { useFirestoreQuery } from "@react-query-firebase/firestore";
 import {
-  query,
+  query as firestoryQuery,
   collection,
   limit,
   QuerySnapshot,
@@ -61,7 +61,7 @@ import { firestore } from "../firebase";
 
 function Products() {
   // Define a query reference using the Firebase SDK
-  const ref = query(collection(firestore, "products"));
+  const ref = firestoryQuery(collection(firestore, "products"));
 
   // Provide the query to the hook
   const query = useFirestoreQuery(["products"], ref);
